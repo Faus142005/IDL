@@ -7,6 +7,8 @@
 
 #include "matematica.h"
 
+//Definiciones
+
 /*
 
     Bits representacion: cuantos bits se usa para la representacion del punto fijo
@@ -28,16 +30,6 @@
 #define LONGENTERO 3
 #define LONGDECIMAL 4
 
-void printBinary(int16_t num)
-{
-    for (int i = sizeof(int16_t) * 8 - 1; i >= 0; i--)
-    {
-        printf("%d", (num >> i) & 1);
-    }
-    printf("\n");
-}
-
-
 void ingresarNumero(char entrada_num[LONGITUD + 1]);
 char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1]);
 
@@ -49,12 +41,12 @@ int main()
 
     ingresarNumero(entrada_num);
 
-    char exitoso = strToFixedPoint(&numero, entrada_num);
+    char codigoResultado = strToFixedPoint(&numero, entrada_num);
 
-    if (exitoso)
+    if (codigoResultado)
     {
-        printf("Codigo de error: %d\n", exitoso);
-        return exitoso;
+        printf("Codigo de error: %d\n", codigoResultado);
+        return codigoResultado;
     }
     printf("Numero en hexadecimal: ");
     printf("%04hx\n", numero);
@@ -159,7 +151,7 @@ char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1])
 
         if (parte_entera_arreglo[i] - '0' < 0 || parte_entera_arreglo[i] - '0' > 9)
         {
-            printf("Error: Mal ingresado el numero");
+            printf("Error: Mal ingresado el numero\n");
             return -4;
         }
 
@@ -173,7 +165,7 @@ char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1])
 
     if ((signo && -parte_entera < MINIMO_VALOR_ENTERO) || (!signo && parte_entera > MAXIMO_VALOR_ENTERO))
     {
-        printf("Error: Fuera del rango de numeros en la parte entera");
+        printf("Error: Fuera del rango de numeros en la parte entera\n");
         return -5;
     }
 
@@ -186,7 +178,7 @@ char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1])
 
         if (parte_decimal_arreglo[i] - '0' < 0 || parte_decimal_arreglo[i] - '0' > 9)
         {
-            printf("Error: Mal ingresado el numero");
+            printf("Error: Mal ingresado el numero\n");
             return -6;
         }
 
@@ -202,12 +194,15 @@ char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1])
 
     j = 0;
 
-    while (j <= BITSDECIMAL && parte_decimal)
+    parte_decimal *= 2;
+
+    while (j < BITSDECIMAL && parte_decimal)
     {
+        printf("Restando %d a %d\n", restar, parte_decimal);
         if (restar <= parte_decimal)
         {
             parte_decimal -= restar;
-            parte_decimal_binario |= 1 << (BITSDECIMAL - j);
+            parte_decimal_binario |= 1 << (BITSDECIMAL - j - 1);
         }
 
         parte_decimal *= 2;
@@ -244,7 +239,11 @@ char strToFixedPoint(int16_t *numero, char entrada_num[LONGITUD + 1])
     *numero = (parte_entera << (BITSDECIMAL)) | parte_decimal_binario;
 
     // Aplicarle el signo Ca2
-
+    
+    for (int i = sizeof(int16_t) * 8 - 1; i >= 0; i--) {
+        printf("%d", (*numero >> i) & 1);
+    }
+    printf("\n");
     if (signo)
         *numero = (~(*numero)) + 1;
 
