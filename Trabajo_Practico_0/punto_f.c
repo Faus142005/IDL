@@ -13,9 +13,9 @@ int main()
     char entrada_num[LONGITUD_16 + 1] = {0};
     int16_t numero;
 
-    ingresarNumeroDecimal(entrada_num);
+    ingresarNumeroDecimal_16(entrada_num);
 
-    char codigoResultado = strAPuntoFijo16(&numero, entrada_num);
+    char codigoResultado = strAPuntoFijo_16(&numero, entrada_num);
 
     if (codigoResultado)
     {
