@@ -105,6 +105,11 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Re
 char strAPuntoFijo_16_M(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Retorna 0 si salio bien
 void ingresarPendiente(char entrada_num[LONGITUD_16 + 1]);
 void ingresarNumeroDecimal_32(char entrada_num[LONGITUD_32 + 1]);
+
+/*  
+    La flag indica si se esta trabajando con x o no, para acotar correctamente su rango a diferencia de un numero normal de 32 bits con signo
+*/
+
 char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char flag); // Retorna 0 si salio bien
 void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x);
 void imprimirOrdenada(int32_t y);

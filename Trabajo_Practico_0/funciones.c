@@ -658,13 +658,13 @@ char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char f
 
 void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x)
 {
-    int64_t resultado = (int64_t)m * x;
+    int64_t resultado = (int64_t)m * x; //El casteo a m se hace para no perder precision hasta terminar de operar completamente
 
     int64_t b_64_bits = b;
-    b_64_bits = b_64_bits << (2 * (BITSDECIMAL_32)-BITSDECIMAL_16);
+    b_64_bits = b_64_bits << (2 * (BITSDECIMAL_32)-BITSDECIMAL_16); //Se alinea la parte fraccionaria de b con la de resultado (m*x lleva a Q(16,30))
 
     resultado += b_64_bits;
-    *y = resultado >> BITSDECIMAL_32; //
+    *y = resultado >> BITSDECIMAL_32; //desplazo los bits de resultado para que se adapte a Q(16,15)
 }
 
 void imprimirOrdenada(int32_t y)
