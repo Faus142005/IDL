@@ -141,7 +141,7 @@ char stringAInt_16(int16_t *numero, char *str, char base)
         signo = 1;
         str++;
     }
-    else if (str[1] == '+')
+    else if (str[0] == '+')
     {
         signo = 0;
         str++;
@@ -261,9 +261,9 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1])
 
     // Manter con el mismo tipo para no olvidarse en las operaciones cambiar el tipo al mas grande
 
-    uint16_t parte_entera;
-    uint16_t parte_decimal;
-    uint16_t parte_decimal_binario;
+    uint16_t parte_entera = 0;
+    uint16_t parte_decimal = 0;
+    uint16_t parte_decimal_binario = 0;
 
     // Pasar string del entero a numero
     codigoFuncion = stringAInt_16(&parte_entera, parte_entera_arreglo, 10);
@@ -274,7 +274,6 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1])
     }
 
     // Ver si esta en el rango
-
     if ((signo && -parte_entera < MINIMO_VALOR_ENTERO) || (!signo && parte_entera > MAXIMO_VALOR_ENTERO))
     {
         printf("Error: Fuera del rango de numeros en la parte entera\n");
@@ -361,4 +360,322 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1])
         *numero = (~(*numero)) + 1;
 
     return 0;
+}
+
+char strAPuntoFijo_16_M(int16_t *numero, char entrada_num[LONGITUD_16 + 1])
+{
+    char signo = 0;
+    char parte_entera_arreglo[LONGENTERO_16_M + 1] = {0};
+    char parte_decimal_arreglo[LONGDECIMAL_16_M + 1] = {0};
+
+    struct formatoString formato;
+    formato.maxLongitudStr = LONGITUD_16;
+    formato.maxCaracteresParteEntera = LONGENTERO_16_M;
+    formato.maxCaracteresParteDecimal = LONGDECIMAL_16_M;
+
+    char codigoFuncion = separarEnteroDecimal(entrada_num, formato, &signo, parte_entera_arreglo, parte_decimal_arreglo);
+    if (codigoFuncion)
+    {
+        printf("Hubo un error al examinar el string. Error: %d\n", codigoFuncion);
+        return -1;
+    }
+
+    const int16_t MINIMO_VALOR_ENTERO = -power(2, BITSENTEROS_16_M);
+    const int16_t MAXIMO_VALOR_ENTERO = -MINIMO_VALOR_ENTERO - 1;
+
+    if (signo)
+        printf("Signo: -\n");
+    else
+        printf("Signo: +\n");
+    printf("Parte entera: %s\n", parte_entera_arreglo);
+    printf("Parte decimal: %s\n", parte_decimal_arreglo);
+
+    // Con el signo, parte entera, y decimal separadas formo el numero
+
+    // Manter con el mismo tipo para no olvidarse en las operaciones cambiar el tipo al mas grande
+
+    uint16_t parte_entera = 0;
+    uint16_t parte_decimal = 0;
+    uint16_t parte_decimal_binario = 0;
+
+    // Pasar string del entero a numero
+    codigoFuncion = stringAInt_16(&parte_entera, parte_entera_arreglo, 10);
+    if (codigoFuncion)
+    {
+        printf("Error: Mal ingresada la parte entera. Error: %d\n", codigoFuncion);
+        return -2;
+    }
+
+    // Ver si esta en el rango
+    if ((signo && -parte_entera < MINIMO_VALOR_ENTERO) || (!signo && parte_entera > MAXIMO_VALOR_ENTERO))
+    {
+        printf("Error: Fuera del rango de numeros en la parte entera\n");
+        return -3;
+    }
+
+    // Pasar string del decimal a numero
+    codigoFuncion = stringAInt_16(&parte_decimal, parte_decimal_arreglo, 10);
+    if (codigoFuncion)
+    {
+        printf("Error: Mal ingresada la parte decimal. Error: %d\n", codigoFuncion);
+        return -4;
+    }
+
+    /*if (parte_decimal > MAXIMO_VALOR_DECIMAL)
+    {
+        printf("Error: Fuera del rango de numeros en la parte decimal\n");
+        return -5;
+    }*/
+
+    // Pasar el decimal a binario
+
+    uint16_t restar = 1;
+
+    while (restar < parte_decimal)
+        restar *= 10;
+
+    char i = 0;
+    parte_decimal *= 2;
+
+    while (i < BITSDECIMAL_16_M && parte_decimal)
+    {
+        if (restar <= parte_decimal)
+        {
+            parte_decimal -= restar;
+            parte_decimal_binario |= 1 << (BITSDECIMAL_16_M - i - 1);
+        }
+
+        parte_decimal *= 2;
+        i++;
+    }
+    /*
+
+            Para lograr acercarse al maximo al valor hay que ver si esta mas cerca ahora o
+            con el siguiente bit (que no existe) encendido para aproximarse lo mejor posible.
+
+            Para esto hay que ver cual si es mayor la diferencia ahora o con el bit encendido
+            Si esta mas cerca ahora se deja asi
+            Si esta mas cerca con el bit encendido entonces como no puedo encenderlo
+            ya que no tengo espacio hago un + 1 / 2^maxBit ya que estaria mas cerca
+
+            Ej:
+
+            Si estoy en 0.296875 y quiero representar el 0.3 estaria en esta situacion:
+            0100110 y si le hago un + 1 me paso asi que tengo que ver como redondeo
+
+            Si el siguiente bit (que no lo dispongo) se pone en 1 eso significa que estoy
+            igual o mas cerca haciendole al 0100110 + 1 que no haciendolo
+
+            Por este motivo se le hace el + 1 o no, para mejorar la precision
+
+        if (restar < parte_decimal)
+        {
+            if ((uint8_t)(parte_decimal_binario + (uint8_t)(1)))
+            {
+                parte_decimal_binario += 1;
+                printf("Hola");
+            }
+            else if ((uint8_t)(parte_entera + (uint8_t)(1)))
+            {
+                parte_decimal_binario += 1;
+                parte_entera += 1;
+            }
+        }
+    */
+
+    // Ya con los binarios hechos juntarlos
+
+    *numero = (parte_entera << BITSDECIMAL_16_M | parte_decimal_binario);
+
+    // Aplicarle el signo Ca2
+
+    if (signo)
+        *numero = (~(*numero)) + 1;
+
+    return 0;
+}
+
+void ingresarPendiente(char entrada_num[LONGITUD_16 + 1])
+{
+
+    printf("Ingrese un numero con el formato ±.ffffff: ");
+    scanf("%s", entrada_num);
+    printf("Numero leido: %s\n", entrada_num);
+}
+
+void ingresarNumeroDecimal_32(char entrada_num[LONGITUD_32 + 1])
+{
+
+    printf("Ingrese un numero con el formato ±eeeee.ffffff: ");
+    scanf("%s", entrada_num);
+    printf("Numero leido: %s\n", entrada_num);
+}
+
+char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char flag)
+{
+    char signo = 0;
+    char parte_entera_arreglo[LONGENTERO_32 + 1] = {0};
+    char parte_decimal_arreglo[LONGDECIMAL_32 + 1] = {0};
+
+    struct formatoString formato;
+    formato.maxLongitudStr = LONGITUD_32;
+    formato.maxCaracteresParteEntera = LONGENTERO_32;
+    formato.maxCaracteresParteDecimal = LONGDECIMAL_32;
+
+    char codigoFuncion = separarEnteroDecimal(entrada_num, formato, &signo, parte_entera_arreglo, parte_decimal_arreglo);
+    if (codigoFuncion)
+    {
+        printf("Hubo un error al examinar el string. Error: %d\n", codigoFuncion);
+        return -1;
+    }
+
+    if (signo)
+        printf("Signo: -\n");
+    else
+        printf("Signo: +\n");
+    printf("Parte entera: %s\n", parte_entera_arreglo);
+    printf("Parte decimal: %s\n", parte_decimal_arreglo);
+
+    // Con el signo, parte entera, y decimal separadas formo el numero
+
+    // Manter con el mismo tipo para no olvidarse en las operaciones cambiar el tipo al mas grande
+
+    int32_t parte_entera;
+    int32_t parte_decimal;
+    int32_t parte_decimal_binario;
+
+    // Pasar string del entero a numero
+    codigoFuncion = stringAInt_32(&parte_entera, parte_entera_arreglo, 10);
+    if (codigoFuncion)
+    {
+        printf("Error: Mal ingresada la parte entera. Error: %d\n", codigoFuncion);
+        return -2;
+    }
+
+    // Ver si esta en el rango de enteros
+
+    int32_t MINIMO_VALOR_ENTERO;
+    int32_t MAXIMO_VALOR_ENTERO;
+
+    printf("%d\n", flag);
+
+    if (flag == 1)
+    {
+        MINIMO_VALOR_ENTERO = MINIMO_X_32;
+        MAXIMO_VALOR_ENTERO = MAXIMO_X_32;
+    }
+    else
+    {
+        MINIMO_VALOR_ENTERO = -power(2, BITSENTEROS_32);
+        MAXIMO_VALOR_ENTERO = -MINIMO_VALOR_ENTERO - 1;
+    }
+
+    if ((signo && -parte_entera < MINIMO_VALOR_ENTERO) || (!signo && parte_entera > MAXIMO_VALOR_ENTERO))
+    {
+        printf("Error: Fuera del rango de numeros en la parte entera\n");
+        return -3;
+    }
+
+    // Pasar string del decimal a numero
+    codigoFuncion = stringAInt_32(&parte_decimal, parte_decimal_arreglo, 10);
+    if (codigoFuncion)
+    {
+        printf("Error: Mal ingresada la parte decimal. Error: %d\n", codigoFuncion);
+        return -4;
+    }
+
+    /*if (parte_decimal > MAXIMO_VALOR_DECIMAL)
+    {
+        printf("Error: Fuera del rango de numeros en la parte decimal\n");
+        return -5;
+    }*/
+
+    // Pasar el decimal a binario
+
+    int32_t restar = 1;
+
+    while (restar < parte_decimal)
+        restar *= 10;
+
+    char i = 0;
+    parte_decimal *= 2;
+
+    while (i < BITSDECIMAL_32 && parte_decimal)
+    {
+        if (restar <= parte_decimal)
+        {
+            parte_decimal -= restar;
+            parte_decimal_binario |= 1 << (BITSDECIMAL_32 - i - 1);
+        }
+
+        parte_decimal *= 2;
+        i++;
+    }
+    /*
+
+            Para lograr acercarse al maximo al valor hay que ver si esta mas cerca ahora o
+            con el siguiente bit (que no existe) encendido para aproximarse lo mejor posible.
+
+            Para esto hay que ver cual si es mayor la diferencia ahora o con el bit encendido
+            Si esta mas cerca ahora se deja asi
+            Si esta mas cerca con el bit encendido entonces como no puedo encenderlo
+            ya que no tengo espacio hago un + 1 / 2^maxBit ya que estaria mas cerca
+
+            Ej:
+
+            Si estoy en 0.296875 y quiero representar el 0.3 estaria en esta situacion:
+            0100110 y si le hago un + 1 me paso asi que tengo que ver como redondeo
+
+            Si el siguiente bit (que no lo dispongo) se pone en 1 eso significa que estoy
+            igual o mas cerca haciendole al 0100110 + 1 que no haciendolo
+
+            Por este motivo se le hace el + 1 o no, para mejorar la precision
+
+        if (restar < parte_decimal)
+        {
+            if ((uint8_t)(parte_decimal_binario + (uint8_t)(1)))
+            {
+                parte_decimal_binario += 1;
+                printf("Hola");
+            }
+            else if ((uint8_t)(parte_entera + (uint8_t)(1)))
+            {
+                parte_decimal_binario += 1;
+                parte_entera += 1;
+            }
+        }
+    */
+
+    // Ya con los binarios hechos juntarlos
+
+    *numero = (parte_entera << BITSDECIMAL_32 | parte_decimal_binario);
+
+    // Aplicarle el signo Ca2
+
+    if (signo)
+        *numero = (~(*numero)) + 1;
+
+    return 0;
+}
+
+void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x)
+{
+    int64_t resultado = (int64_t)m * x;
+
+    int64_t b_64_bits = b;
+    b_64_bits = b_64_bits << (2 * (BITSDECIMAL_32)-BITSDECIMAL_16);
+
+    resultado += b_64_bits;
+    *y = resultado >> BITSDECIMAL_32; //
+}
+
+void imprimirOrdenada(int32_t y)
+{
+    int32_t y_parte_entera = y >> BITSDECIMAL_32;
+
+    int32_t y_parte_decimal = y & (power(2, BITSDECIMAL_32) - 1);
+    int32_t y_decimal_imprimir = (y_parte_decimal * power(10, LONGDECIMAL_32)) / power(2, BITSDECIMAL_32);
+
+    printf("y en hexadecimal: %04hx\n", y);
+    printf("y en decimal: %d.%d\n", y_parte_entera, y_decimal_imprimir);
 }

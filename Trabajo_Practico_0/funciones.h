@@ -74,12 +74,37 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Re
 
 /////////////////////////////////////////////
 
+// Punto H
+
+/* Para la longitud del string de b y m se reutilizara LONGITUD_16.
+        Para b, tambien, se utilizara LONGENTERO_16 y LONGDECIMAL_16.
+
+   Para la longitud del string de x se utilizara LONGITUD_32 y para su parte real y decimal se utilizara LONGENTERO_32 y LONGDECIMAL_32.
+
+   Para representar b se utilizará BITSENTEROS_16 y BITSDECIMAL_16.
+
+   Para representar x se utilizará BITSENTEROS_32 y BITSDECIMAL_32.
+*/
 #define BITSREPRESENTACION_32 32
-#define BITSENTEROS_32 15
-#define BITSDECIMAL_32 16
+#define BITSENTEROS_32 16
+#define BITSDECIMAL_32 15
 
 #define LONGITUD_32 13
 #define LONGENTERO_32 5
 #define LONGDECIMAL_32 6
 
-// Punto H
+#define BITSENTEROS_16_M 0
+#define BITSDECIMAL_16_M 15
+
+#define LONGENTERO_16_M 1
+#define LONGDECIMAL_16_M 6
+
+#define MINIMO_X_32 -65408
+#define MAXIMO_X_32 65408
+
+char strAPuntoFijo_16_M(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Retorna 0 si salio bien
+void ingresarPendiente(char entrada_num[LONGITUD_16 + 1]);
+void ingresarNumeroDecimal_32(char entrada_num[LONGITUD_32 + 1]);
+char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char flag); // Retorna 0 si salio bien
+void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x);
+void imprimirOrdenada(int32_t y);
