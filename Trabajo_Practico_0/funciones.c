@@ -557,8 +557,6 @@ char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char f
     int32_t MINIMO_VALOR_ENTERO;
     int32_t MAXIMO_VALOR_ENTERO;
 
-    printf("%d\n", flag);
-
     if (flag == 1)
     {
         MINIMO_VALOR_ENTERO = MINIMO_X_32;
