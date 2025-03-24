@@ -1,4 +1,6 @@
 #include "funciones.h"
+#include <string.h>
+#include <ctype.h>
 
 // Funciones matematicas
 
@@ -658,13 +660,13 @@ char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char f
 
 void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x)
 {
-    int64_t resultado = (int64_t)m * x; //El casteo a m se hace para no perder precision hasta terminar de operar completamente
+    int64_t resultado = (int64_t)m * x; // El casteo a m se hace para no perder precision hasta terminar de operar completamente
 
     int64_t b_64_bits = b;
-    b_64_bits = b_64_bits << (2 * (BITSDECIMAL_32)-BITSDECIMAL_16); //Se alinea la parte fraccionaria de b con la de resultado (m*x lleva a Q(16,30))
+    b_64_bits = b_64_bits << (2 * (BITSDECIMAL_32)-BITSDECIMAL_16); // Se alinea la parte fraccionaria de b con la de resultado (m*x lleva a Q(16,30))
 
     resultado += b_64_bits;
-    *y = resultado >> BITSDECIMAL_32; //desplazo los bits de resultado para que se adapte a Q(16,15)
+    *y = resultado >> BITSDECIMAL_32; // desplazo los bits de resultado para que se adapte a Q(16,15)
 }
 
 void imprimirOrdenada(int32_t y)
@@ -676,4 +678,111 @@ void imprimirOrdenada(int32_t y)
 
     printf("y en hexadecimal: %04hx\n", y);
     printf("y en decimal: %d.%d\n", y_parte_entera, y_decimal_imprimir);
+}
+
+// Funciones punto G:
+
+int ingresarNumeroHexadecimal_16(char entrada_num[])
+{
+    printf("Ingrese un número con el formato 0xHHHH: ");
+    scanf("%7s", entrada_num);
+    if (entrada_num[LONGITUD_HEXA])
+        return 1;
+    entrada_num[1] = tolower(entrada_num[1]);
+    entrada_num[2] = toupper(entrada_num[2]);
+    entrada_num[3] = toupper(entrada_num[3]);
+    entrada_num[4] = toupper(entrada_num[4]);
+    entrada_num[5] = toupper(entrada_num[5]);
+    return 0;
+}
+
+int validarNumeroHexadecimal_16(char entrada_num[LONGITUD_HEXA + 1])
+{
+    if (entrada_num[0] != '0')
+        return 1;
+    if (entrada_num[1] != 'x')
+        return 1;
+    if (!strchr(HEXA, entrada_num[2]))
+        return 1;
+    if (!strchr(HEXA, entrada_num[3]))
+        return 1;
+    if (!strchr(HEXA, entrada_num[4]))
+        return 1;
+    if (!strchr(HEXA, entrada_num[5]))
+        return 1;
+    return 0;
+}
+
+void hexadecimalABinario_16(char entrada_num[LONGITUD_HEXA + 1], uint16_t *nBinario)
+{
+    // Cada uno representa un Byte del numero binario resultado;
+    uint8_t BYTES[4];
+    for (int i = 0; i < 4; i++)
+    {
+        switch (entrada_num[i + 2])
+        {
+        case '0':
+            BYTES[i] = 0b0000;
+            break;
+        case '1':
+            BYTES[i] = 0b0001;
+            break;
+        case '2':
+            BYTES[i] = 0b0010;
+            break;
+        case '3':
+            BYTES[i] = 0b0011;
+            break;
+        case '4':
+            BYTES[i] = 0b0100;
+            break;
+        case '5':
+            BYTES[i] = 0b0101;
+            break;
+        case '6':
+            BYTES[i] = 0b0110;
+            break;
+        case '7':
+            BYTES[i] = 0b0111;
+            break;
+        case '8':
+            BYTES[i] = 0b1000;
+            break;
+        case '9':
+            BYTES[i] = 0b1001;
+            break;
+        case 'A':
+            BYTES[i] = 0b1010;
+            break;
+        case 'B':
+            BYTES[i] = 0b1011;
+            break;
+        case 'C':
+            BYTES[i] = 0b1100;
+            break;
+        case 'D':
+            BYTES[i] = 0b1101;
+            break;
+        case 'E':
+            BYTES[i] = 0b1110;
+            break;
+        case 'F':
+            BYTES[i] = 0b1111;
+            break;
+        }
+    }
+    *nBinario = (BYTES[0] << 12) | (BYTES[1] << 8) | (BYTES[2] << 4) | BYTES[3];
+}
+
+void binarioADecimal_16(uint16_t nBinario, uint16_t *nEntero, uint16_t *nDecimal, char *signo)
+{
+    // Compruebo si es negativo, en caso de serlo aplico Ca2;
+    if ((nBinario >> 15) & 1)
+    {
+        *signo = '-';
+        nBinario = ~nBinario + 1;
+    }
+
+    *nEntero = nBinario >> 8;
+    *nDecimal = (nBinario & 0xFF) * 10000 / 256;
 }

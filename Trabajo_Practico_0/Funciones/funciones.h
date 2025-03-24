@@ -72,6 +72,15 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Re
 
 // Punto G
 
+#define LONGITUD_HEXA 6
+#define HEXA "0123456789ABCDEF"
+
+int ingresarNumeroHexadecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
+int validarNumeroHexadecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
+void hexadecimalADecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
+void hexadecimalABinario_16(char entrada_num[LONGITUD_HEXA + 1], uint16_t *nBinario);
+void binarioADecimal_16(uint16_t nBinario, uint16_t *nEntero, uint16_t *nDecimal, char *signo);
+
 /////////////////////////////////////////////
 
 // Punto H
@@ -106,7 +115,7 @@ char strAPuntoFijo_16_M(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // 
 void ingresarPendiente(char entrada_num[LONGITUD_16 + 1]);
 void ingresarNumeroDecimal_32(char entrada_num[LONGITUD_32 + 1]);
 
-/*  
+/*
     La flag indica si se esta trabajando con x o no, para acotar correctamente su rango a diferencia de un numero normal de 32 bits con signo
 */
 

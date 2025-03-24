@@ -5,7 +5,7 @@
 
 // Propios
 
-#include "funciones.h"
+#include "../Funciones/funciones.h"
 
 int main()
 {

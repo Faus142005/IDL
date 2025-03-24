@@ -1,0 +1,5 @@
+Compilar (posicionado en el directorio Punto_x):
+gcc *.c ../Funciones/*.c -o punto_x
+
+Ejecutar (posicionado en el directorio Punto_x):
+./punto_x
