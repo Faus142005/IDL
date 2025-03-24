@@ -1,7 +1,7 @@
-**# Introducción al Diseño Lógico**  
-**Primer Semestre, 2025**  
+## **Introducción al Diseño Lógico**  
+Primer Semestre, 2025  
 
-## **Integrantes:**  
+**Integrantes:**  
 - **Patané, Baltazar.** 03773/1.  
 - **Cladera, Blas Martín.** 03694/3.  
 - **Isabella Valenzi, Octavio Tomás.** 03665/8.  
