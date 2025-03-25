@@ -100,7 +100,7 @@ char stringAInt_8(int8_t *numero, char *str, char base)
         signo = 1;
         str++;
     }
-    else if (str[1] == '+')
+    else if (str[0] == '+')
     {
         signo = 0;
         str++;
@@ -190,7 +190,7 @@ char stringAInt_32(int32_t *numero, char *str, char base)
         signo = 1;
         str++;
     }
-    else if (str[1] == '+')
+    else if (str[0] == '+')
     {
         signo = 0;
         str++;
