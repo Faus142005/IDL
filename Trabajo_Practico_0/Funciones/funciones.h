@@ -77,7 +77,6 @@ char strAPuntoFijo_16(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Re
 
 int ingresarNumeroHexadecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
 int validarNumeroHexadecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
-void hexadecimalADecimal_16(char entrada_num[LONGITUD_HEXA + 1]);
 void hexadecimalABinario_16(char entrada_num[LONGITUD_HEXA + 1], uint16_t *nBinario);
 void binarioADecimal_16(uint16_t nBinario, uint16_t *nEntero, uint16_t *nDecimal, char *signo);
 
@@ -110,6 +109,7 @@ void binarioADecimal_16(uint16_t nBinario, uint16_t *nEntero, uint16_t *nDecimal
 
 #define MINIMO_X_32 -65408
 #define MAXIMO_X_32 65408
+#define MAXIMO_X_FRACCIONARIO "003875"
 
 char strAPuntoFijo_16_M(int16_t *numero, char entrada_num[LONGITUD_16 + 1]); // Retorna 0 si salio bien
 void ingresarPendiente(char entrada_num[LONGITUD_16 + 1]);

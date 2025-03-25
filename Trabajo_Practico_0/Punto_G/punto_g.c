@@ -29,5 +29,5 @@ int main()
     uint16_t nEntero = 0;
     uint16_t nDecimal = 0;
     binarioADecimal_16(nBinario, &nEntero, &nDecimal, &signo);
-    printf("Número en formato ±eee.ffff: %c%u,%u \n", signo, nEntero, nDecimal);
+    printf("Número en formato ±eee.ffff: %c%u.%u \n", signo, nEntero, nDecimal);
 }

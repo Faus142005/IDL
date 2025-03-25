@@ -50,7 +50,7 @@ int main()
     printf("%04hx\n", numero_b);
 
     printf("x en hexadecimal: ");
-    printf("%04hx\n", numero_x);
+    printf("%x\n", numero_x);
 
     int32_t y;
     calcularOrdenada(&y, numero_m, numero_b, numero_x);
