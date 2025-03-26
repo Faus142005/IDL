@@ -713,7 +713,7 @@ char strAPuntoFijo_32(int32_t *numero, char entrada_num[LONGITUD_32 + 1], char f
 
     // Ya con los binarios hechos juntarlos
 
-    *numero = (parte_entera << BITSDECIMAL_32 | parte_decimal_binario);
+    *numero = ((parte_entera << BITSDECIMAL_32) | parte_decimal_binario);
 
     // Aplicarle el signo Ca2
 
