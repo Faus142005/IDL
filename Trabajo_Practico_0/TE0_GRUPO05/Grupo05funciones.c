@@ -736,13 +736,22 @@ void calcularOrdenada(int32_t *y, int16_t m, int16_t b, int32_t x)
 
 void imprimirOrdenada(int32_t y)
 {
+
+    printf("y en hexadecimal: %x\n", y);
+
+    printf("y en decimal:  ");
+
+    if(y < 0){
+        printf("-");
+        y = (~y) + 1;
+    }    
+
     int32_t y_parte_entera = y >> BITSDECIMAL_32;
 
     int32_t y_parte_decimal = y & (power(2, BITSDECIMAL_32) - 1);
     int32_t y_decimal_imprimir = (y_parte_decimal * power(10, LONGDECIMAL_32)) / power(2, BITSDECIMAL_32);
 
-    printf("y en hexadecimal: %x\n", y);
-    printf("y en decimal: %d.%d\n", y_parte_entera, y_decimal_imprimir);
+    printf("%d.%d\n", y_parte_entera, y_decimal_imprimir);
 }
 
 // Funciones punto G:
