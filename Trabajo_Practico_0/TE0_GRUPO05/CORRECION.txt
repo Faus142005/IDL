@@ -1,0 +1,1 @@
+Esto es una aclaración para indicar que el problema comentado en el trabajo NO estaba en la impresión como tal de la ordenada (y) sino en que no se hacia el Complemento a 2 (CA2) en la funcion imprimirOrdenada si la ordenada (y) terminaba siendo negativo luego de calcularOrdenada.

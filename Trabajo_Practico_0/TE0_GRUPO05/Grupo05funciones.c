@@ -741,10 +741,11 @@ void imprimirOrdenada(int32_t y)
 
     printf("y en decimal:  ");
 
-    if(y < 0){
+    if (y < 0)
+    {
         printf("-");
-        y = (~y) + 1;
-    }    
+        y = (~y) + 1; // Se aplica CA2
+    }
 
     int32_t y_parte_entera = y >> BITSDECIMAL_32;
 
