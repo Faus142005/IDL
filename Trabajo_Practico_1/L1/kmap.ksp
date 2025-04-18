@@ -1,0 +1,832 @@
+{
+	"format": "Karnaugh Studio Project",
+	"minimizationTarget": 0,
+	"minimizationType": 1,
+	"factor": true,
+	"inputFormat": "dc5700d9-88f1-43b9-81d8-af598c5ccc7d",
+	"outputFormat": "dc5700d9-88f1-43b9-81d8-af598c5ccc7d",
+	"truthTable": {
+		"functions": {
+			"count": 7,
+			"data": [
+				{
+					"name": "G",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "F",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 3,
+								"x2": 1,
+								"y2": 4,
+								"map": 0,
+								"color": 4294901760,
+								"locked": false,
+								"visible": true
+							},
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 1,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "E",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 3,
+								"x2": 1,
+								"y2": 4,
+								"map": 0,
+								"color": 4294901760,
+								"locked": false,
+								"visible": true
+							},
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 1,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "D",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 3,
+								"x2": 1,
+								"y2": 4,
+								"map": 0,
+								"color": 4294901760,
+								"locked": false,
+								"visible": true
+							},
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 1,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "C",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 3,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "B",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 3,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "A",
+					"input": 0,
+					"minterms": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"dontCares": [],
+					"groups": [
+						[],
+						[
+							{
+								"x1": 0,
+								"y1": 3,
+								"x2": 1,
+								"y2": 4,
+								"map": 0,
+								"color": 4294901760,
+								"locked": false,
+								"visible": true
+							},
+							{
+								"x1": 0,
+								"y1": 0,
+								"x2": 3,
+								"y2": 1,
+								"map": 0,
+								"color": 4278190335,
+								"locked": false,
+								"visible": true
+							}
+						]
+					]
+				},
+				{
+					"name": "y8",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y9",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y10",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y11",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y12",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y13",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y14",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y15",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y16",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y17",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y18",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y19",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y20",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y21",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y22",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y23",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y24",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y25",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y26",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y27",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y28",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y29",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y30",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y31",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				},
+				{
+					"name": "y32",
+					"input": 0,
+					"minterms": [],
+					"dontCares": [],
+					"groups": [
+						[],
+						[]
+					]
+				}
+			]
+		},
+		"variables": {
+			"count": 4,
+			"bitOrder": 1,
+			"names": [
+				"P3",
+				"P2",
+				"P1",
+				"P0",
+				"KA",
+				"x6",
+				"x7",
+				"x8"
+			]
+		},
+		"variableOrder": [
+			3,
+			1,
+			2,
+			0,
+			4,
+			5,
+			6,
+			7
+		]
+	},
+	"mapView": {
+		"backgroundColor": 16777215,
+		"gridColor": 4286611584,
+		"gridInside": true,
+		"gridShown": true,
+		"groupOpacity": 0.10000000149011612,
+		"labelColor": 4278190080,
+		"valueColor0": 2147483648,
+		"valueColor1": 4278190080,
+		"valueColorX": 4278190080
+	},
+	"tableView": {
+		"backgroundColor": 16777215,
+		"evenRowOverlay": 100663296,
+		"oddRowOverlay": 0,
+		"functionColorCount": 1,
+		"functionColors": [
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080
+		],
+		"functionHeaderColors": [
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080,
+			16777215,
+			4278190080
+		],
+		"functionCustomHeaders": [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false
+		],
+		"gridColor": 4286611584,
+		"gridShown": true,
+		"gridContainsNames": false,
+		"gridHorizontalShown": true,
+		"gridVerticalShown": true,
+		"labelRotation": 0,
+		"numbersBackgroundColor": 16777215,
+		"numbersForegroundColor": 4286611584,
+		"numbersHeaderBackgroundColor": 16777215,
+		"numbersHeaderForegroundColor": 4286611584,
+		"numbersCustomHeader": false,
+		"numberLabel": "#",
+		"numbersShown": true,
+		"variableColorCount": 1,
+		"variableColors": [
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584
+		],
+		"variableHeaderColors": [
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584,
+			16777215,
+			4286611584
+		],
+		"variableCustomHeaders": [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false
+		],
+		"variablesShown": true
+	},
+	"exportMaps": {
+		"margin": 4
+	},
+	"exportResults": {
+		"includeFunctions": [
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true
+		],
+		"factor": true,
+		"validate": true
+	},
+	"exportTruthTable": {
+		"delimiter": 0,
+		"margin": 4
+	}
+}
