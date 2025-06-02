@@ -399,54 +399,6 @@ on the Quartus Prime software download page.
 	(pt 472 400)
 )
 (connector
-	(pt 128 432)
-	(pt 200 432)
-)
-(connector
-	(pt 200 432)
-	(pt 208 432)
-)
-(connector
-	(pt 200 416)
-	(pt 200 432)
-)
-(connector
-	(pt 200 432)
-	(pt 200 496)
-)
-(connector
-	(pt 304 432)
-	(pt 384 432)
-)
-(connector
-	(pt 384 432)
-	(pt 392 432)
-)
-(connector
-	(pt 384 416)
-	(pt 384 432)
-)
-(connector
-	(pt 384 432)
-	(pt 384 496)
-)
-(connector
-	(pt 568 416)
-	(pt 568 432)
-)
-(connector
-	(pt 568 432)
-	(pt 568 496)
-)
-(connector
-	(pt 552 432)
-	(pt 568 432)
-)
-(connector
-	(pt 568 432)
-	(pt 576 432)
-)
-(connector
 	(pt 128 400)
 	(pt 128 432)
 )
@@ -465,19 +417,6 @@ on the Quartus Prime software download page.
 (connector
 	(pt 424 472)
 	(pt 608 472)
-)
-(connector
-	(text "CLK" (rect 42 480 62 492)(font "Intel Clear" ))
-	(pt 32 496)
-	(pt 200 496)
-)
-(connector
-	(pt 200 496)
-	(pt 384 496)
-)
-(connector
-	(pt 384 496)
-	(pt 568 496)
 )
 (connector
 	(text "Reset" (rect 42 384 69 396)(font "Intel Clear" ))
@@ -591,14 +530,46 @@ on the Quartus Prime software download page.
 	(pt 736 520)
 	(pt 784 520)
 )
-(junction (pt 200 432))
-(junction (pt 384 432))
-(junction (pt 568 432))
+(connector
+	(pt 128 432)
+	(pt 208 432)
+)
+(connector
+	(pt 200 416)
+	(pt 200 496)
+)
+(connector
+	(text "CLK" (rect 42 480 62 492)(font "Intel Clear" ))
+	(pt 32 496)
+	(pt 200 496)
+)
+(connector
+	(pt 304 432)
+	(pt 392 432)
+)
+(connector
+	(pt 384 416)
+	(pt 384 496)
+)
+(connector
+	(pt 200 496)
+	(pt 384 496)
+)
+(connector
+	(pt 384 496)
+	(pt 568 496)
+)
+(connector
+	(pt 552 432)
+	(pt 576 432)
+)
+(connector
+	(pt 568 416)
+	(pt 568 496)
+)
 (junction (pt 128 432))
 (junction (pt 240 472))
 (junction (pt 424 472))
-(junction (pt 200 496))
-(junction (pt 384 496))
 (junction (pt 288 336))
 (junction (pt 128 400))
 (junction (pt 552 400))
@@ -608,3 +579,5 @@ on the Quartus Prime software download page.
 (junction (pt 240 280))
 (junction (pt 472 400))
 (junction (pt 656 400))
+(junction (pt 200 496))
+(junction (pt 384 496))
