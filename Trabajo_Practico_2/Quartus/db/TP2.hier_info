@@ -1,0 +1,77 @@
+|Semaforo
+V1 <= Salida:inst3.V1
+VCC => Contador35:inst.VCC
+CLK => Contador35:inst.CLK
+CLK => Estado:inst2.CLK
+RST => Contador35:inst.RST
+RST => inst100.IN0
+A1 <= Salida:inst3.A1
+R1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+V2 <= Salida:inst3.V2
+A2 <= Salida:inst3.A2
+R2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+V3 <= Salida:inst3.V3
+A3 <= Salida:inst3.A3
+R3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Semaforo|Salida:inst3
+V1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Q1 => inst.IN0
+Q1 => inst1.IN0
+Q1 => inst9.IN0
+Q1 => inst4.IN0
+Q1 => inst5.IN0
+Q2 => inst.IN1
+Q2 => inst10.IN0
+Q2 => inst2.IN1
+Q2 => inst4.IN1
+Q0 => inst.IN2
+Q0 => inst1.IN2
+Q0 => inst2.IN2
+Q0 => inst3.IN2
+Q0 => inst8.IN0
+A1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+V2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+V3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+A3 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Semaforo|Estado:inst2
+Q0 <= D0.DB_MAX_OUTPUT_PORT_TYPE
+RSTn => D0.ACLR
+RSTn => D1.ACLR
+RSTn => D2.ACLR
+CLK => D0.CLK
+CLK => D1.CLK
+CLK => D2.CLK
+Q1 <= D1.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= D2.DB_MAX_OUTPUT_PORT_TYPE
+IN => inst34.IN0
+IN => inst29.IN1
+IN => inst26.IN0
+IN => inst21.IN1
+IN => inst12.IN3
+IN => inst19.IN0
+IN => inst3.IN3
+IN => inst10.IN0
+
+
+|Semaforo|Contador35:inst
+COUNT <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+VCC => inst11.PRESET
+VCC => inst9.PRESET
+VCC => inst4.PRESET
+VCC => inst3.PRESET
+VCC => inst5.PRESET
+VCC => inst7.PRESET
+CLK => inst4.CLK
+CLK => inst3.CLK
+CLK => inst5.CLK
+CLK => inst7.CLK
+CLK => inst9.CLK
+CLK => inst11.CLK
+RST => inst18.IN0
+
+
