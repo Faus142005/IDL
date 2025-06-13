@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Blas\Desktop\LAGO\IDL\Trabajo_Practico_2\Quartus\simulation\qsim
+vSemaforo
+Z1 !s100 7z?;1S:hW2hJ`jblR0G:]1
+Z2 IWSaXZ[be^g[LQM05`aW4k3
+Z3 V=;Kg0eQ4h<OaacHUZe@ED0
+Z4 dC:\Users\Blas\Desktop\LAGO\IDL\Trabajo_Practico_2\Quartus\simulation\qsim
+Z5 w1749848617
+Z6 8TP2.vo
+Z7 FTP2.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|TP2.vo|
+Z10 o-work work -O0
+Z11 n@semaforo
+!i10b 1
+!s85 0
+Z12 !s108 1749848618.178000
+Z13 !s107 TP2.vo|
+!s101 -O0
+vSemaforo_vlg_check_tst
+!i10b 1
+!s100 <_aVhSS`PZCn=KE^1fd`13
+IW@ZAX]R=bkBaFCn?eFPn>3
+Z14 VI5cShCY2VclI]aXVKf7j60
+R4
+Z15 w1749848615
+Z16 8Waveform.vwf.vt
+Z17 FWaveform.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z18 !s108 1749848618.265000
+Z19 !s107 Waveform.vwf.vt|
+Z20 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z21 n@semaforo_vlg_check_tst
+vSemaforo_vlg_sample_tst
+!i10b 1
+!s100 Jf[jeW2[S9JdEoA6?YXHo2
+IWdg<26loe??0Z<J=L`c5;3
+Z22 Vcz?7Pb7Ej4LK028T1`?lD1
+R4
+R15
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+Z23 n@semaforo_vlg_sample_tst
+vSemaforo_vlg_vec_tst
+!i10b 1
+!s100 @kkU:Pbme4bSL>[=54km33
+IV6LKV4;RWhmO_kn^T?WZY1
+Z24 VX37YBACLiC81kk2D3OK0e3
+R4
+R15
+R16
+R17
+Z25 L0 372
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+Z26 n@semaforo_vlg_vec_tst
