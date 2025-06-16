@@ -1,5 +1,5 @@
 EDA Netlist Writer report for TP2
-Wed Jun 11 23:42:29 2025
+Fri Jun 13 18:03:37 2025
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Jun 11 23:42:29 2025 ;
+; EDA Netlist Writer Status ; Successful - Fri Jun 13 18:03:37 2025 ;
 ; Revision Name             ; TP2                                   ;
 ; Top-level Entity Name     ; Semaforo                              ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -44,42 +44,42 @@ applicable agreement for further details.
 +---------------------------+---------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate netlist for functional simulation only                                                   ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                        ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                   ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_6_1200mv_85c_slow.vho      ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_6_1200mv_0c_slow.vho       ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_min_1200mv_0c_fast.vho     ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2.vho                        ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_6_1200mv_85c_vhd_slow.sdo  ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_6_1200mv_0c_vhd_slow.sdo   ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_min_1200mv_0c_vhd_fast.sdo ;
-; C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/TP2_vhd.sdo                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                              ;
++---------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                         ;
++---------------------------------------------------------------------------------------------------------+
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_6_1200mv_85c_slow.vo     ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_6_1200mv_0c_slow.vo      ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_min_1200mv_0c_fast.vo    ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2.vo                       ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_6_1200mv_85c_v_slow.sdo  ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_6_1200mv_0c_v_slow.sdo   ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//TP2_v.sdo                    ;
++---------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,20 +88,33 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jun 11 23:42:29 2025
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off TP2 -c TP2
-Info (204019): Generated file TP2_6_1200mv_85c_slow.vho in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_6_1200mv_0c_slow.vho in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_min_1200mv_0c_fast.vho in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2.vho in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_6_1200mv_85c_vhd_slow.sdo in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_6_1200mv_0c_vhd_slow.sdo in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_min_1200mv_0c_vhd_fast.sdo in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file TP2_vhd.sdo in folder "C:/FACULTAD OCTAVIO/2025/1er Cuatrimestre/IDL/TrabajosPracticos/IDL/Trabajo_Practico_2/Quartus/simulation/modelsim/" for EDA simulation tool
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Fri Jun 13 18:03:36 2025
+Info: Command: quartus_eda --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim/ TP2 -c TP2
+Info (204019): Generated file TP2_6_1200mv_85c_slow.vo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_6_1200mv_0c_slow.vo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_min_1200mv_0c_fast.vo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2.vo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_6_1200mv_85c_v_slow.sdo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_6_1200mv_0c_v_slow.sdo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_min_1200mv_0c_v_fast.sdo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file TP2_v.sdo in folder "C:/Users/Blas/Desktop/LAGO/IDL/Trabajo_Practico_2/Quartus/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4616 megabytes
-    Info: Processing ended: Wed Jun 11 23:42:29 2025
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 4604 megabytes
+    Info: Processing ended: Fri Jun 13 18:03:37 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

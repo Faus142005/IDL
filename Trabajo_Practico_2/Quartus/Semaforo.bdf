@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect -72 200 96 216)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "VCC" (rect 5 0 29 12)(font "Arial" ))
+	(text "VCC" (rect 5 0 28 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect -72 216 96 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 27 12)(font "Arial" ))
+	(text "CLK" (rect 5 0 26 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect -72 232 96 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "RST" (rect 5 0 27 12)(font "Arial" ))
+	(text "RST" (rect 5 0 26 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -504,10 +504,6 @@ applicable agreement for further details.
 	(pt 840 240)
 )
 (connector
-	(pt 304 208)
-	(pt 528 208)
-)
-(connector
 	(pt 624 224)
 	(pt 840 224)
 )
@@ -631,4 +627,8 @@ applicable agreement for further details.
 	(text "R3" (rect 1226 392 1240 404)(font "Arial" ))
 	(pt 1216 408)
 	(pt 1240 408)
+)
+(connector
+	(pt 304 208)
+	(pt 528 208)
 )
