@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Blas/Desktop/integrador/Registros.bdf
+source_file = 1, C:/Users/Blas/Desktop/integrador/db/Registros.cbx.xml
+design_name = Registros
+instance = comp, \Output~output\, Output~output, Registros, 1
+instance = comp, \CLK~input\, CLK~input, Registros, 1
+instance = comp, \InputEnable~input\, InputEnable~input, Registros, 1
+instance = comp, \D0~input\, D0~input, Registros, 1
+instance = comp, \BIT~0\, BIT~0, Registros, 1
+instance = comp, \OutputEnable~input\, OutputEnable~input, Registros, 1
